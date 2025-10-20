@@ -1,5 +1,6 @@
 # Homework 5
 
+This work tests your knowledge on the different types of data containers in R.
 These scripts:
 
 - `a_vectors.R`
