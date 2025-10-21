@@ -64,7 +64,7 @@ ii <- 1 # << edit
 stopifnot(ii == which.max(vec6))
 
 ss <- 1 # << edit
-stopifnot(sum(seq_along(vec6)))
+stopifnot(ss == sum(seq_along(vec6)))
 
 ii <- 1 # << edit
 stopifnot(ii == min(cumsum(vec6)))
