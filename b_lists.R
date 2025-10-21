@@ -39,6 +39,7 @@ for (ii in seq_along(lst2[[2]])) {
 val <- 2 # << edit
 stopifnot(nn == val)
 
+
 vec <- unlist(lst2)
 ss <- sum(vec[c(TRUE, FALSE)])
 val <-14 # << edit
