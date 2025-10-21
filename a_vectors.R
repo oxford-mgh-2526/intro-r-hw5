@@ -68,10 +68,6 @@ stopifnot(ii == which.max(vec6))
 ss <- 15 # << edit
 stopifnot(ss==sum(seq_along(vec6)))
 
-ss <- 1 # << edit
-stopifnot(ss == sum(seq_along(vec6)))
-
-
 ii <- 2 # << edit
 stopifnot(ii == min(cumsum(vec6)))
 

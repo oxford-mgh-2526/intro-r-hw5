@@ -10,6 +10,7 @@ vec2 <- letters[vec1 + 1]
 lst1 <- list(vec1, vec2) # << edit
 stopifnot(is.list(lst1) && sum(lst1[[1]]) == 15 && "c" == lst1[[2]][2])
 
+
 lst2 <- list(
     1:3,
     list(
