@@ -45,7 +45,7 @@ str <- paste(vec4[1], vec4[2], sep = "-") # << edit
 stopifnot(str == "a-b")
 
 str <- "" # << edit
-stopifnot(str = paste0(vec4[3], vec4[3]))
+stopifnot(str == paste0(vec4[3], vec4[3]))
 
 # ----
 
