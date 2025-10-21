@@ -5,50 +5,46 @@ rm(list = ls())
 
 # ----
 
-ii <- 1L # << edit
+ii <- 1 # << edit
 stopifnot(is.integer(ii) && ii == 1)
 
 vec1 <- 1:3
-vec2 <- c(vec1, vec1,-2L*vec1) # << edit
+vec2 <- c(vec1, vec1, 2 * vec1) # << edit
 stopifnot(is.integer(vec2))
 
 ss <- 0 # << edit
 stopifnot(sum(vec2) == ss)
 
-vv <- 1 # << edit
+vv <- 0 # << edit
 stopifnot(vec2[ii*4] == vv)
 
 length(vec2) <- length(vec2) - 2
-ll <- 7 # << edit
+ll <- 0 # << edit
 stopifnot(length(vec2) == ll)
 
 for (vv in vec2) {
     vv <- 10
 }
-ss <- 10 # << edit 
+ss <- 0 # << edit 
 stopifnot(sum(vec2) == ss)
 
 for (ii in seq_along(vec2)) {
     vec2[ii] <- 10
 }
-ss <- 70 # << edit
+ss <- 0 # << edit
 stopifnot(sum(vec2) == ss)
 
 vec3 <- rep(3, 10)
-mm <- 3 # << edit
+mm <- 0 # << edit
 stopifnot(mean(vec3[c(1, 5, 2)]) == mm)
 
 # ----
 
 vec4 <- letters[4:1]
-str <- paste(vec4[4], vec4[3], sep = "-") # << edit
+str <- paste(vec4[1], vec4[2], sep = "-") # << edit
 stopifnot(str == "a-b")
 
-<<<<<<< HEAD
-str <- "bb" # << edit
-=======
 str <- "" # << edit
->>>>>>> e9087f63ef2cafa17f5ffc0eb83002ea8c6b9847
 stopifnot(str == paste0(vec4[3], vec4[3]))
 
 # ----
@@ -57,32 +53,27 @@ vec5 <- c(1, 3, 5)
 func_1 <- function(vec, ff) {
     return(ff(vec))
 }
-res <- func_1(vec5, mean) # << edit
+res <- func_1(vec5, sum) # << edit
 stopifnot(res == 3)
 
 
 # ----
 
 vec6 <- c(2, 0, 3, 7, 5)
-ii <- 4 # << edit
+ii <- 1 # << edit
 stopifnot(ii == which.max(vec6))
 
-<<<<<<< HEAD
-ss <- 15 # << edit
-stopifnot(ss==sum(seq_along(vec6)))
-=======
 ss <- 1 # << edit
 stopifnot(ss == sum(seq_along(vec6)))
->>>>>>> e9087f63ef2cafa17f5ffc0eb83002ea8c6b9847
 
-ii <- 2 # << edit
+ii <- 1 # << edit
 stopifnot(ii == min(cumsum(vec6)))
 
 
 # ----
 
 fac <- factor(c("type_a", "type_b", "type_b", "type_a", "type_a", "type_c"))
-fac1 <- c(1L, 2L, 2L, 1L, 1L, 3L) # << edit
+fac1 <- c(1L, 2L, 2L, 1L, 2L, 3L) # << edit
 attr(fac1, "levels") <- c("type_a", "type_b", "type_c")
 attr(fac1, "class") <- "factor"
 
