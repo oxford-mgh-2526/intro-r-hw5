@@ -31,7 +31,7 @@ stopifnot(sum(vec2) == ss)
 for (ii in seq_along(vec2)) {
     vec2[ii] <- 10
 }
-ss <- 0 # << edit
+ss <- 60L # << edit
 stopifnot(sum(vec2) == ss)
 
 vec3 <- rep(3, 10)
@@ -78,5 +78,6 @@ attr(fac1, "levels") <- c("type_a", "type_b", "type_c")
 attr(fac1, "class") <- "factor"
 
 stopifnot(identical(fac, fac1))
+
 
 
