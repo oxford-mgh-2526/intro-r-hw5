@@ -7,7 +7,7 @@ rm(list = ls())
 
 vec1 <- 1:5
 vec2 <- letters[vec1 + 1]
-lst1 <- c(vec1, vec2) # << edit
+lst1 <- list(vec1, vec2) # << edit
 stopifnot(is.list(lst1) && sum(lst1[[1]]) == 15 && "c" == lst1[[2]][2])
 
 lst2 <- list(
@@ -18,34 +18,34 @@ lst2 <- list(
     )
 )
 nn <- lst2[[2]][[1]][1]
-val <- 0 # << edit
+val <- 2 # << edit
 stopifnot(nn == val)
 
 nn <- sum(lst2[[1]][1:2])
-val <- 0 # << edit
+val <- 3 # << edit
 stopifnot(nn == val)
 
 nn <- 0
 for (ii in seq_along(lst2)) {
     nn <- nn + 1
 }
-val <- 0 # << edit
+val <- 2 # << edit
 stopifnot(nn == val)
 
 nn <- 0
 for (ii in seq_along(lst2[[2]])) {
     nn <- nn + 1
 }
-val <- 0 # << edit
+val <- 2 # << edit
 stopifnot(nn == val)
 
 vec <- unlist(lst2)
-ss <- sum(vec[c(TRUE, FALSE)])
-val <- 0 # << edit
+ss <- sum(vec[c(TRUE, FALSE)]) # How is it interpreting TRUE and FALSE
+val <- 14 # << edit
 stopifnot(ss == val)
 
 vec <- unlist(lst2[2])
-val <- vec(length(vec)) # << edit
+val <- length(vec) - 1 # << edit
 stopifnot(val == lst2[[2]][[2]][3])
 
 ## ----
@@ -54,22 +54,22 @@ df <- data.frame(
     "a" = letters[1:5],
     "b" = 1:5
 )
-l1 <- df[["b"]] # << edit
+l1 <- df["b"] # << edit
 stopifnot(is.list(l1))
 
-colnames(df) <- paste0("col", colnames(df)) # << edit
+colnames(df) <- paste("col", colnames(df), sep = "_") # << edit
 stopifnot(colnames(df)[2] == "col_b")
 
 df[["col_b"]] <- ncol(df)
 df2 <- rbind(df, df)
-val <- 0 # << edit
+val <- 10 # << edit
 stopifnot(val == sum(df[[2]]))
 
-val <- 0 # << edit
+val <- 2 # << edit
 stopifnot(val == sum(df2[[1]] == "a"))
 
 df2[[2]][df2[[1]] == "a"] <- 10
-val <- 0 # << edit
+val <- 36 # << edit
 stopifnot(val == sum(df2[["col_b"]]))
 
 # ----
@@ -86,5 +86,5 @@ for (nn in names(df3)) {
         res <- res + sum(df3[[nn]][1:2])
     }
 }
-val <- 0 # << edit
+val <- 20 # << edit
 stopifnot(val == res)
