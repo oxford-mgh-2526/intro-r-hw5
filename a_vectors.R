@@ -44,7 +44,11 @@ vec4 <- letters[4:1]
 str <- paste(vec4[4], vec4[3], sep = "-") # << edit
 stopifnot(str == "a-b")
 
+<<<<<<< HEAD
 str <- "bb" # << edit
+=======
+str <- "" # << edit
+>>>>>>> e9087f63ef2cafa17f5ffc0eb83002ea8c6b9847
 stopifnot(str == paste0(vec4[3], vec4[3]))
 
 # ----
@@ -63,8 +67,13 @@ vec6 <- c(2, 0, 3, 7, 5)
 ii <- 4 # << edit
 stopifnot(ii == which.max(vec6))
 
+<<<<<<< HEAD
 ss <- 15 # << edit
 stopifnot(ss==sum(seq_along(vec6)))
+=======
+ss <- 1 # << edit
+stopifnot(ss == sum(seq_along(vec6)))
+>>>>>>> e9087f63ef2cafa17f5ffc0eb83002ea8c6b9847
 
 ii <- 2 # << edit
 stopifnot(ii == min(cumsum(vec6)))
